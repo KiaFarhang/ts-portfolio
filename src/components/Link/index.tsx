@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 export interface Props {
     text: string;
@@ -7,7 +8,7 @@ export interface Props {
 
 const Link = ({ text, href }: Props) => {
     return (
-        <p><a href={href} title={text}>{text}</a></p>
+        <p><RouterLink to={href} title={text} />{text}</p>
     );
 };
 
