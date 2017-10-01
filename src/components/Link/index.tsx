@@ -8,7 +8,7 @@ export interface Props {
 const Link = ({ text, href }: Props) => {
     return (
         <p><a href={href} title={text}>{text}</a></p>
-    )
-}
+    );
+};
 
 export default Link;

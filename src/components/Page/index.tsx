@@ -17,10 +17,10 @@ export interface Props {
 }
 
 const Page = ({ text, commandMatches, links }: Props) => {
-    const textComponents = text.map((text, index) => { return <Text text={text} key={index} /> });
+    const textComponents = text.map((theText, index) => { return <Text text={theText} key={index} />; });
     let linkComponents;
     if (links) {
-        linkComponents = links.map((link, index) => { return <Link text={link.text} href={link.href} key={index} /> });
+        linkComponents = links.map((link, index) => { return <Link text={link.text} href={link.href} key={index} />; });
     }
 
     if (linkComponents) {
@@ -30,14 +30,14 @@ const Page = ({ text, commandMatches, links }: Props) => {
                 {linkComponents}
                 <CommandLineWithRouter matches={commandMatches} />
             </div>
-        )
+        );
     }
     return (
         <div>
             {textComponents}
             <CommandLineWithRouter matches={commandMatches} />
         </div>
-    )
-}
+    );
+};
 
 export default Page;

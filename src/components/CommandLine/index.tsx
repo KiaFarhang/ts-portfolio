@@ -1,26 +1,25 @@
 import * as React from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 
 export interface Props {
     matches: {
         command: string,
         url: string
-    }[],
-    history?: any
+    }[];
+    history?: any;
 }
 
 export interface State {
-    value: string
+    value: string;
 }
 
-export class CommandLine extends React.Component<Props, State>{
+export class CommandLine extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = { value: '' };
     }
 
     handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        console.log(event.currentTarget.value);
         this.setState({ value: event.currentTarget.value });
     }
 
@@ -41,7 +40,7 @@ export class CommandLine extends React.Component<Props, State>{
     generateFindFunction = (value: string) => {
         return function (object: { command: string, url: string }) {
             return object.command === value;
-        }
+        };
     }
 
     render() {
@@ -55,4 +54,3 @@ export class CommandLine extends React.Component<Props, State>{
 }
 
 export const CommandLineWithRouter = withRouter(CommandLine);
-
