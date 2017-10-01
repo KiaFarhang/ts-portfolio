@@ -8,7 +8,7 @@ export interface Props {
 
 const Link = ({ text, href }: Props) => {
     return (
-        <p><RouterLink to={href} title={text} />{text}</p>
+        <p><RouterLink to={href} title={text}>{text}</RouterLink></p>
     );
 };
 
