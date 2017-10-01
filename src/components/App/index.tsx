@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import HomePage from '../HomePage';
+import AboutPage from '../AboutPage';
 
 import './App.css';
 
@@ -13,8 +14,10 @@ const logo = require('./logo.svg');
 const App = () => {
   return (
     <Router>
-      <Route exact={true} path="/" component={HomePage} />
-
+      <div>
+        <Route exact={true} path="/" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+      </div>
     </Router>
   );
 };
