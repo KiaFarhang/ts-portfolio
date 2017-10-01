@@ -46,7 +46,13 @@ export class CommandLine extends React.Component<Props, State> {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" className="test" value={this.state.value} onChange={this.handleChange} />
+                <input
+                    type="text"
+                    autoFocus={true}
+                    className="test"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                />
                 <input type="submit" style={{ display: 'none' }} />
             </form>
         );
