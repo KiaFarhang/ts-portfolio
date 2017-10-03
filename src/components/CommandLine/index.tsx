@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import './CommandLine.css';
+
 export interface Props {
     matches: {
         command: string,
@@ -45,11 +47,10 @@ export class CommandLine extends React.Component<Props, State> {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="command-line" onSubmit={this.handleSubmit}>
                 <input
                     type="text"
                     autoFocus={true}
-                    className="test"
                     value={this.state.value}
                     onChange={this.handleChange}
                 />
