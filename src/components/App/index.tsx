@@ -9,8 +9,6 @@ import AboutPage from '../AboutPage';
 
 import './App.css';
 
-const logo = require('./logo.svg');
-
 const App = () => {
   return (
     <Router>
