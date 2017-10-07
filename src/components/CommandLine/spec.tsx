@@ -36,6 +36,22 @@ it('nothing happens to window location on form submit if state.value does not ma
     expect(url).toEqual(BASE_TEST_URL);
 });
 
+it('autocompletes the text input value if tab is pressed with a partial match', () => {
+    const container = enzyme.mount(<CommandLine matches={matches} />);
+    container.setState({ value: 'abo' });
+    const input = container.find('input').first();
+    input.simulate('keyDown', { keyCode: 9 });
+    expect(container.state('value')).toEqual('about');
+});
+
+it('pressing tab without a partial match does not trigger autocomplete', () => {
+    const container = enzyme.mount(<CommandLine matches={matches} />);
+    container.setState({ value: 'fo' });
+    const input = container.find('input').first();
+    input.simulate('keyDown', { keyCode: 9 });
+    expect(container.state('value')).toEqual('fo');
+})
+
 // it('location changes to match match prop on form submit if state.value does match a prop string', () => {
 //     // const container = enzyme.mount(<CommandLine matches={matches} />);
 //     const container = enzyme.mount(

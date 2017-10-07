@@ -16,6 +16,7 @@ export interface State {
 }
 
 export class CommandLine extends React.Component<Props, State> {
+
     constructor(props: Props) {
         super(props);
         this.state = { value: '' };
@@ -35,7 +36,7 @@ export class CommandLine extends React.Component<Props, State> {
         const potentialMatch = this.props.matches.find(findFunction);
 
         if (potentialMatch) {
-            if (potentialMatch.url.indexOf('https') > -1) {
+            if (potentialMatch.url.indexOf('http') > -1) {
                 window.open(potentialMatch.url);
                 this.setState(({
                     value: ''
@@ -52,6 +53,19 @@ export class CommandLine extends React.Component<Props, State> {
         };
     }
 
+    handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.keyCode === 9) {
+            event.preventDefault();
+            this.props.matches.forEach((match) => {
+                if (match.command.startsWith(this.state.value)) {
+                    this.setState(({
+                        value: match.command
+                    }));
+                }
+            });
+        }
+    }
+
     render() {
         return (
             <form className="command-line" onSubmit={this.handleSubmit}>
@@ -60,6 +74,7 @@ export class CommandLine extends React.Component<Props, State> {
                     autoFocus={true}
                     value={this.state.value}
                     onChange={this.handleChange}
+                    onKeyDown={this.handleKeyDown}
                 /></span>
                 <input type="submit" style={{ display: 'none' }} />
             </form>
