@@ -13,6 +13,7 @@ const data = {
 
     ],
     commands: [
+        { command: '../', url: '../' },
         { command: 'home', url: '' },
         { command: 'about', url: 'about' },
         { command: 'github', url: 'https://github.com/kiafarhang' },

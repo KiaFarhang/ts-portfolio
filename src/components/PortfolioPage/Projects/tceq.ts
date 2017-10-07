@@ -5,12 +5,13 @@ const tceq = {
         `Use the "repo" command to read more on GitHub.`
     ],
     links: [
-        { text: 'portfolio', href: 'portfolio' },
+        { text: 'portfolio', href: '../portfolio' },
         { text: 'repo', href: 'https://github.com/sa-express-news/tceq-scraper' }
 
     ],
     commands: [
-        { command: 'portfolio', url: 'portfolio' },
+        { command: '../', url: '../portfolio' },
+        { command: 'portfolio', url: '../portfolio' },
         { command: 'repo', url: 'https://github.com/sa-express-news/tceq-scraper' }
     ]
 };
