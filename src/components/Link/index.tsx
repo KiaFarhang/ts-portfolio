@@ -9,9 +9,16 @@ export interface Props {
 }
 
 const Link = ({ text, href }: Props) => {
-    return (
-        <p><RouterLink to={href} title={text}>{text}</RouterLink></p>
-    );
+    if (href.indexOf('http') > -1) {
+        return (
+            <p><a href={href} title={text} target="_blank">{text}</a></p>
+        );
+    } else {
+        return (
+            <p><RouterLink to={href} title={text}>{text}</RouterLink></p>
+        );
+    }
+
 };
 
 export default Link;
