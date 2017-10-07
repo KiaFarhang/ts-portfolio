@@ -29,7 +29,7 @@ const Page = ({ text, commandMatches, links }: Props) => {
         return (
             <div>
                 {textComponents}
-                <div className='link-container'>
+                <div className="link-container">
                     {linkComponents}
                 </div>
                 <CommandLineWithRouter matches={commandMatches} />
