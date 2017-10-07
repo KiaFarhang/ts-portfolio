@@ -30,7 +30,7 @@ export class CommandLine extends React.Component<Props, State> {
     handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
-        const submitValue = this.state.value;
+        const submitValue = this.state.value.toLowerCase();
 
         const findFunction = this.generateFindFunction(submitValue);
 
@@ -60,7 +60,7 @@ export class CommandLine extends React.Component<Props, State> {
         if (event.keyCode === 9) {
             event.preventDefault();
             this.props.matches.forEach((match) => {
-                if (match.command.startsWith(this.state.value)) {
+                if (match.command.startsWith(this.state.value.toLowerCase())) {
                     this.setState(({
                         value: match.command
                     }));
