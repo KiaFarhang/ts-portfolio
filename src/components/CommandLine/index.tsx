@@ -35,7 +35,14 @@ export class CommandLine extends React.Component<Props, State> {
         const potentialMatch = this.props.matches.find(findFunction);
 
         if (potentialMatch) {
-            this.props.history.push(potentialMatch.url);
+            if (potentialMatch.url.indexOf('https') > -1) {
+                window.open(potentialMatch.url);
+                this.setState(({
+                    value: ''
+                }));
+            } else {
+                this.props.history.push(potentialMatch.url);
+            }
         }
 
     }
