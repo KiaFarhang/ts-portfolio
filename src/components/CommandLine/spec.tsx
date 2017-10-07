@@ -29,7 +29,6 @@ it('the <form> contains two <input> elements', () => {
 
 it('nothing happens to window location on form submit if state.value does not match a prop string', () => {
     const container = enzyme.mount(<CommandLine matches={matches} />)
-    // console.log(container);
     container.setState({ value: 'foo' });
     const form = container.find('form');
     form.simulate('submit');

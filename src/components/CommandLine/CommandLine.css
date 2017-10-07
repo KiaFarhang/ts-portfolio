@@ -4,3 +4,16 @@
     font-family: inherit;
     font-size: inherit;
 }
+
+.command-line input{
+    border: none;
+}
+
+.command-line span::before{
+    color: #fff;
+    content: '$ ';
+}
+
+.command-line input:focus{
+    outline: none;
+}

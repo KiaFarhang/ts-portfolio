@@ -48,12 +48,12 @@ export class CommandLine extends React.Component<Props, State> {
     render() {
         return (
             <form className="command-line" onSubmit={this.handleSubmit}>
-                <input
+                <span><input
                     type="text"
                     autoFocus={true}
                     value={this.state.value}
                     onChange={this.handleChange}
-                />
+                /></span>
                 <input type="submit" style={{ display: 'none' }} />
             </form>
         );
