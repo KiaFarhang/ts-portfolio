@@ -6,11 +6,13 @@ const data = {
         `Outside of work, I enjoy playing video games, reading and taking walks with my girlfriend and dog.`
     ],
     links: [
-        { text: 'Home', href: '' }
+        { text: 'Home', href: '' },
+        { text: 'Portfolio', href: 'portfolio' }
 
     ],
     commands: [
-        { command: 'home', url: '' }
+        { command: 'home', url: '' },
+        { command: 'portfolio', url: 'portfolio' }
     ]
 };
 
