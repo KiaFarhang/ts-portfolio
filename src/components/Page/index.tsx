@@ -4,6 +4,8 @@ import Text from '../Text';
 import Link from '../Link';
 import { CommandLineWithRouter } from '../CommandLine';
 
+import './Page.css';
+
 export interface Props {
     text: string[];
     commandMatches: {
@@ -27,7 +29,9 @@ const Page = ({ text, commandMatches, links }: Props) => {
         return (
             <div>
                 {textComponents}
-                {linkComponents}
+                <div className='link-container'>
+                    {linkComponents}
+                </div>
                 <CommandLineWithRouter matches={commandMatches} />
             </div>
         );
