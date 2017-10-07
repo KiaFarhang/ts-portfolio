@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { withRouter } from 'react-router-dom';
+import { History } from 'history';
 
 import './CommandLine.css';
 
@@ -8,7 +9,7 @@ export interface Props {
         command: string,
         url: string
     }[];
-    history?: any;
+    history?: History;
 }
 
 export interface State {
@@ -42,7 +43,9 @@ export class CommandLine extends React.Component<Props, State> {
                     value: ''
                 }));
             } else {
-                this.props.history.push(potentialMatch.url);
+                if (this.props.history) {
+                    this.props.history.push(potentialMatch.url);
+                }
             }
         }
 
