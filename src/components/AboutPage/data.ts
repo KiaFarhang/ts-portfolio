@@ -7,8 +7,8 @@ const data = {
         `Outside of work, I enjoy playing video games, reading and taking walks with my girlfriend and dog.`
     ],
     links: [
-        { text: 'Home', href: '' },
-        { text: 'Portfolio', href: 'portfolio' }
+        { text: 'home', href: '' },
+        { text: 'portfolio', href: 'portfolio' }
 
     ],
     commands: [

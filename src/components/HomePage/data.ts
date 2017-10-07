@@ -7,8 +7,8 @@ const data = {
         For example, to access the "About" page, type "about" or "About" and press enter.`
     ],
     links: [
-        { text: 'About', href: 'about' },
-        { text: 'Portfolio', href: 'portfolio' }
+        { text: 'about', href: 'about' },
+        { text: 'portfolio', href: 'portfolio' }
     ],
     commands: [
         { command: 'about', url: 'about' },
