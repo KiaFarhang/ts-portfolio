@@ -1,7 +1,7 @@
 .link-container{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .link-container p{
