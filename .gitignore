@@ -10,7 +10,7 @@
 /build
 
 # production server file
-/server.js
+/src/server.js
 
 # misc
 .DS_Store
