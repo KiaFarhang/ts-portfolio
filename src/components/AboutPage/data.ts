@@ -8,13 +8,15 @@ const data = {
     ],
     links: [
         { text: 'home', href: '' },
-        { text: 'portfolio', href: 'portfolio' }
+        { text: 'portfolio', href: 'portfolio' },
+        { text: 'linkedin', href: 'https://www.linkedin.com/in/kia-farhang-68423966/' }
 
     ],
     commands: [
         { command: '../', url: '../' },
         { command: 'home', url: '' },
-        { command: 'portfolio', url: 'portfolio' }
+        { command: 'portfolio', url: 'portfolio' },
+        { command: 'linkedin', url: 'https://www.linkedin.com/in/kia-farhang-68423966/' }
     ]
 };
 
