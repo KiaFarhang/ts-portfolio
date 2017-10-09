@@ -30,7 +30,8 @@ export class CommandLine extends React.Component<Props, State> {
     handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
-        const submitValue = this.state.value.toLowerCase();
+
+        const submitValue = this.startsWithCD(this.state.value) ? this.state.value.substr(3).toLowerCase() : this.state.value.toLowerCase();
 
         const findFunction = this.generateFindFunction(submitValue);
 
@@ -59,14 +60,20 @@ export class CommandLine extends React.Component<Props, State> {
     handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.keyCode === 9) {
             event.preventDefault();
+            const currentCommand = this.startsWithCD(this.state.value) ? this.state.value.substr(3) : this.state.value;
+            console.log(currentCommand);
             this.props.matches.forEach((match) => {
-                if (match.command.startsWith(this.state.value.toLowerCase())) {
+                if (match.command.startsWith(currentCommand.toLowerCase())) {
                     this.setState(({
                         value: match.command
                     }));
                 }
             });
         }
+    }
+
+    startsWithCD = (theString: string): boolean => {
+        return theString.startsWith('cd ');
     }
 
     render() {
