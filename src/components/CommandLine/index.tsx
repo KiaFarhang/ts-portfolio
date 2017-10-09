@@ -74,7 +74,7 @@ export class CommandLine extends React.Component<Props, State> {
             <form className="command-line" onSubmit={this.handleSubmit}>
                 <span><input
                     type="text"
-                    autoFocus={window.innerWidth > 1023}
+                    autoFocus={window.innerWidth > 1024}
                     value={this.state.value}
                     onChange={this.handleChange}
                     onKeyDown={this.handleKeyDown}
