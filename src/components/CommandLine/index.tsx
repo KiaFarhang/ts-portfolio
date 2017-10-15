@@ -61,7 +61,6 @@ export class CommandLine extends React.Component<Props, State> {
         if (event.keyCode === 9) {
             event.preventDefault();
             const currentCommand = this.startsWithCD(this.state.value) ? this.state.value.substr(3) : this.state.value;
-            console.log(currentCommand);
             this.props.matches.forEach((match) => {
                 if (match.command.startsWith(currentCommand.toLowerCase())) {
                     this.setState(({
