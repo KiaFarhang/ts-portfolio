@@ -8,9 +8,10 @@ const data = {
         { text: 'about', href: 'about' },
         { text: 'github', href: 'https://github.com/kiafarhang' },
         { text: 'story-template', href: 'portfolio/template' },
-        { text: 'tceq-scraper', href: 'portfolio/tceq' },
-        { text: 'oubliette', href: 'portfolio/oubliette' }
-
+        { text: 'sapd-scraper', href: 'portfolio/sapd-scraper' },
+        { text: 'football-bracket', href: 'portfolio/football-bracket' },
+        { text: 'spurs-nation', href: 'portfolio/spurs-nation' },
+        { text: 'tceq-scraper', href: 'portfolio/tceq' }
     ],
     commands: [
         { command: '../', url: '../' },
@@ -18,8 +19,10 @@ const data = {
         { command: 'about', url: 'about' },
         { command: 'github', url: 'https://github.com/kiafarhang' },
         { command: 'story-template', url: 'portfolio/template' },
-        { command: 'tceq-scraper', url: 'portfolio/tceq' },
-        { command: 'oubliette', url: 'portfolio/oubliette' }
+        { command: 'sapd-scraper', url: 'portfolio/sapd-scraper' },
+        { command: 'football-bracket', url: 'portfolio/football-bracket' },
+        { command: 'spurs-nation', url: 'portfolio/spurs-nation' },
+        { command: 'tceq-scraper', url: 'portfolio/tceq' }
     ]
 };
 
