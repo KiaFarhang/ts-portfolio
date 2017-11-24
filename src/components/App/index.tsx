@@ -22,15 +22,4 @@ const App = () => {
   );
 };
 
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <Router>
-//         <Route exact path="/" component={HomePage} />
-
-//       </Router>
-//     );
-//   }
-// }
-
 export default App;
