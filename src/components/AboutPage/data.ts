@@ -4,7 +4,7 @@ const data = {
         `That took me to Southern California, where I started coding and eventually switched careers.`,
         `I prefer back-end, test-driven development whenever possible.
         In spring 2018, I began the part-time pursuit of a computer science degree.`,
-        `Outside of work, I enjoy playing video games, reading and taking walks with my girlfriend and dog.`
+        `Outside of work, I enjoy yoga, reading and taking walks with my dog.`
     ],
     links: [
         { text: 'home', href: '' },
