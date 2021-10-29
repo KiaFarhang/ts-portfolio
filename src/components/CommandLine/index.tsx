@@ -1,94 +1,84 @@
 import * as React from 'react';
-import { withRouter } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { History } from 'history';
 
 import './CommandLine.css';
+import { useState } from 'react';
 
-export interface Props {
+interface Props extends RouteComponentProps<any> {
     matches: {
         command: string,
         url: string
     }[];
-    history?: History;
+    history: History;
 }
 
-export interface State {
-    value: string;
+const startsWithCD = (theString: string): boolean => {
+    return theString.startsWith('cd ');
 }
 
-export class CommandLine extends React.Component<Props, State> {
+const generateFindFunction = (value: string) => {
+    return function (object: { command: string, url: string }) {
+        return object.command === value;
+    };
+}
 
-    constructor(props: Props) {
-        super(props);
-        this.state = { value: '' };
+const CommandLine = ({matches, history}: Props) => {
+    const [value, setValue] = useState('');
+
+    const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+        setValue(event.currentTarget.value);
     }
 
-    handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        this.setState({ value: event.currentTarget.value });
-    }
-
-    handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-
-        event.preventDefault();
-
-        const submitValue = this.startsWithCD(this.state.value) ? this.state.value.substr(3).toLowerCase() : this.state.value.toLowerCase();
-
-        const findFunction = this.generateFindFunction(submitValue);
-
-        const potentialMatch = this.props.matches.find(findFunction);
-
-        if (potentialMatch) {
-            if (potentialMatch.url.indexOf('http') > -1) {
-                window.open(potentialMatch.url);
-                this.setState(({
-                    value: ''
-                }));
-            } else {
-                if (this.props.history) {
-                    this.props.history.push(potentialMatch.url);
-                }
-            }
-        }
-
-    }
-    generateFindFunction = (value: string) => {
-        return function (object: { command: string, url: string }) {
-            return object.command === value;
-        };
-    }
-
-    handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.keyCode === 9) {
             event.preventDefault();
-            const currentCommand = this.startsWithCD(this.state.value) ? this.state.value.substr(3) : this.state.value;
-            this.props.matches.forEach((match) => {
+            const currentCommand = startsWithCD(value) ? value.substr(3) : value;
+            matches.forEach((match) => {
                 if (match.command.startsWith(currentCommand.toLowerCase())) {
-                    this.setState(({
-                        value: match.command
-                    }));
+                    setValue(match.command);
                 }
             });
         }
     }
 
-    startsWithCD = (theString: string): boolean => {
-        return theString.startsWith('cd ');
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+
+        const submitValue = startsWithCD(value) ? value.substr(3).toLowerCase() : value.toLowerCase();
+
+        const findFunction = generateFindFunction(submitValue);
+
+        const potentialMatch = matches.find(findFunction);
+
+        if (potentialMatch) {
+            if (potentialMatch.url.indexOf('http') > -1) {
+                window.open(potentialMatch.url);
+                setValue('');
+            } else {
+                if (history) {
+                    history.push(potentialMatch.url);
+                }
+            }
+        }
+
     }
 
-    render() {
-        return (
-            <form className="command-line" onSubmit={this.handleSubmit}>
-                <span><input
+    return (
+        <form className="command-line" onSubmit={handleSubmit}>
+            <span>
+                <input
                     type="text"
                     autoFocus={window.innerWidth > 1024}
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    onKeyDown={this.handleKeyDown}
-                /></span>
-                <input type="submit" style={{ display: 'none' }} />
-            </form>
-        );
-    }
+                    value={value}
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}
+                />
+            </span>
+            <input type="submit" style={{ display: 'none' }} />
+        </form>
+    );
 }
 
 export const CommandLineWithRouter = withRouter(CommandLine);
