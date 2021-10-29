@@ -6,12 +6,6 @@
 # testing
 /coverage
 
-# production
-/build
-
-# production server file
-/src/server.js
-
 # misc
 .DS_Store
 .env.local

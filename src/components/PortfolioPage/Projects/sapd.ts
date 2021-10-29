@@ -14,6 +14,6 @@ const sapd = {
         { command: 'portfolio', url: '../portfolio' },
         { command: 'repo', url: 'https://github.com/sa-express-news/sapd-crime-scraper' },
     ]
-}
+};
 
 export default sapd;

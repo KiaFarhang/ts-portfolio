@@ -1,0 +1,12 @@
+name: Run tests
+on:
+  push:
+    branches:
+      - master
+jobs: 
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    - run: yarn test
