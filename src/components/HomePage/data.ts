@@ -1,6 +1,6 @@
 const data = {
     text: [
-        `Hi, I'm Kia Farhang, a software developer in Austin, Texas currently working for USAA.`,
+        `Hi, I'm Kia Farhang, a software developer in Austin, Texas currently working for DataStax.`,
         `You can navigate this site using the links below - or, if you'd like, use the command line at the bottom of the screen.`,
         `Type the name of the page you'd like to visit. 
         To access the "about" page, type "about" and press enter.`,
