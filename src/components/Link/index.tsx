@@ -11,7 +11,7 @@ export interface Props {
 const Link = ({ text, href }: Props) => {
     if (href.indexOf('http') > -1) {
         return (
-            <p><a href={href} title={text} target="_blank">{text}</a></p>
+            <p><a href={href} title={text} target="_blank" rel="noreferrer">{text}</a></p>
         );
     } else {
         return (

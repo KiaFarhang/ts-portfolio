@@ -6,7 +6,6 @@ import data from './data';
 
 import tceq from './Projects/tceq';
 import template from './Projects/template';
-import spursNation from './Projects/spurs';
 import bracket from './Projects/bracket';
 import sapd from './Projects/sapd';
 import top100 from './Projects/top100';
@@ -15,7 +14,7 @@ import podcastWidget from './Projects/podcastWidget';
 import graphicQuiz from './Projects/graphicQuiz';
 import distillr from './Projects/distillr';
 
-import { RouteComponentProps, Route, Router } from 'react-router-dom';
+import { RouteComponentProps, Route } from 'react-router-dom';
 
 const PortfolioPage = ({ match, location, history }: RouteComponentProps<{}>) => {
     return (
