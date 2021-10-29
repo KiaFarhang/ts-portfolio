@@ -2,6 +2,7 @@
   "name": "ts-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "devDependencies": {
     "@types/enzyme": "^2.8.9",
     "@types/jest": "^21.1.1",
