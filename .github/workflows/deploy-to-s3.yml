@@ -1,11 +1,11 @@
 name: Deploy to S3
-on: [push]
-jobs:
-  Deply:
+on:
+  push:
+    branches:
+      - master
+jobs: 
+  Deploy:
     runs-on: ubuntu-latest
-    # permissions:
-    #   id-token: write
-    #   contents: read
     steps:
     - uses: actions/checkout@v2
     - run: npm ci
