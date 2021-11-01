@@ -1,3 +1,3 @@
-# Note to anyone running this #
+# Personal Website
 
-For some reason installing dependencies via Yarn leads to a conflict. Install dependencies via NPM and running the app via Yarn or NPM works fine. Welcome to the JavaScript ecosystem! 
+This is the React application running on my personal website, [kiafarhang.com](https://kiafarhang.com). It's a create-react-app application I build and use the DigitalOcean app platform to serve the static resources in the `build` directory.
