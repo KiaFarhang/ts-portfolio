@@ -18,16 +18,19 @@ const matches = [
 enzyme.configure({ adapter: new Adapter() });
 
 it('renders a <form>', () => {
+    //@ts-ignore
     const container = enzyme.mount(<CommandLine matches={matches} />)
     expect(container.find('form')).toHaveLength(1);
 });
 
 it('the <form> contains two <input> elements', () => {
+    //@ts-ignore
     const container = enzyme.mount(<CommandLine matches={matches} />)
     expect(container.find('input')).toHaveLength(2);
 });
 
 it('nothing happens to window location on form submit if state.value does not match a prop string', () => {
+    //@ts-ignore
     const container = enzyme.mount(<CommandLine matches={matches} />)
     container.setState({ value: 'foo' });
     const form = container.find('form');
@@ -37,6 +40,7 @@ it('nothing happens to window location on form submit if state.value does not ma
 });
 
 it('autocompletes the text input value if tab is pressed with a partial match', () => {
+    //@ts-ignore
     const container = enzyme.mount(<CommandLine matches={matches} />);
     container.setState({ value: 'abo' });
     const input = container.find('input').first();
@@ -45,6 +49,7 @@ it('autocompletes the text input value if tab is pressed with a partial match', 
 });
 
 it('pressing tab without a partial match does not trigger autocomplete', () => {
+    //@ts-ignore
     const container = enzyme.mount(<CommandLine matches={matches} />);
     container.setState({ value: 'fo' });
     const input = container.find('input').first();
