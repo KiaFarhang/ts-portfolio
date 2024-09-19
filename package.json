@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^21.1.1",
     "@types/node": "^8.0.31",
