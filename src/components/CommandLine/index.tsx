@@ -23,7 +23,7 @@ const generateFindFunction = (value: string) => {
     };
 }
 
-const CommandLine = ({matches, history}: Props) => {
+export const CommandLine = ({matches, history}: Props) => {
     const [value, setValue] = useState('');
 
     const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
