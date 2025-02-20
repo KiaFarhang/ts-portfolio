@@ -5,15 +5,11 @@ const data = {
     ],
     links: [
         { text: 'home', href: '' },
-        { text: 'about', href: 'about' },
-        { text: 'github', href: 'https://github.com/kiafarhang' },
         { text: 'opensecrets', href: 'portfolio/opensecrets'}
     ],
     commands: [
         { command: '../', url: '../' },
         { command: 'home', url: '' },
-        { command: 'about', url: 'about' },
-        { command: 'github', url: 'https://github.com/kiafarhang' },
         { command: 'opensecrets', url: 'portfolio/opensecrets' },
     ]
 };
