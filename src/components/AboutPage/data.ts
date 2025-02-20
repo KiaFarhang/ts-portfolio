@@ -1,9 +1,6 @@
 const data = {
     text: [
-        `I grew up in Minnesota, where I studied journalism in college.`,
-        `That took me to Southern California, where I started coding and eventually switched careers.`,
-        `I prefer back-end, test-driven development whenever possible.`,
-        `Outside of work, I enjoy writing music, playing the piano and guitar, and trying to maintain a garden.`
+        ``
     ],
     links: [
         { text: 'home', href: '' },
