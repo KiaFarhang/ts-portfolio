@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import Text from '../Text';
 import Link from '../Link';
-import { CommandLineWithRouter } from '../CommandLine';
 
 import './Page.css';
 
@@ -32,14 +31,12 @@ const Page = ({ text, commandMatches, links }: Props) => {
                 <div className="link-container">
                     {linkComponents}
                 </div>
-                <CommandLineWithRouter matches={commandMatches} />
             </div>
         );
     }
     return (
         <div>
             {textComponents}
-            <CommandLineWithRouter matches={commandMatches} />
         </div>
     );
 };
